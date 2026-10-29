@@ -5,6 +5,7 @@ import 'package:form_user_mobile/main.dart';
 void main() {
   testWidgets('Exibe erros para todos os campos vazios', (tester) async {
     await tester.pumpWidget(const MyApp());
+    await tester.ensureVisible(find.text('CADASTRAR'));
     await tester.tap(find.text('CADASTRAR'));
     await tester.pump();
     expect(find.text('Este campo é obrigatório.'), findsNWidgets(5));
